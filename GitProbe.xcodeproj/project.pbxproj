@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		B093A0FC26D8E2E80069514D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B093A0FA26D8E2E80069514D /* LaunchScreen.storyboard */; };
 		B093A10726D8E2E80069514D /* GIthubLookupCorrectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093A10626D8E2E80069514D /* GIthubLookupCorrectedTests.swift */; };
 		B093A11226D8E2E80069514D /* GIthubLookupCorrectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093A11126D8E2E80069514D /* GIthubLookupCorrectedUITests.swift */; };
+		E4EB61FB2773946200735AA1 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = E4EB61FA2773946200735AA1 /* URLImage */; };
+		E4EB61FD2773946200735AA1 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = E4EB61FC2773946200735AA1 /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB61FD2773946200735AA1 /* URLImageStore in Frameworks */,
+				E4EB61FB2773946200735AA1 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +156,10 @@
 			dependencies = (
 			);
 			name = GithubLookupCorrected;
+			packageProductDependencies = (
+				E4EB61FA2773946200735AA1 /* URLImage */,
+				E4EB61FC2773946200735AA1 /* URLImageStore */,
+			);
 			productName = GIthubLookupCorrected;
 			productReference = B093A0EC26D8E2E50069514D /* GithubLookupCorrected.app */;
 			productType = "com.apple.product-type.application";
@@ -214,7 +222,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B093A0E726D8E2E40069514D /* Build configuration list for PBXProject "GithubLookupCorrectedImage" */;
+			buildConfigurationList = B093A0E726D8E2E40069514D /* Build configuration list for PBXProject "GitProbe" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,6 +231,9 @@
 				Base,
 			);
 			mainGroup = B093A0E326D8E2E40069514D;
+			packageReferences = (
+				E4EB61F92773946200735AA1 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = B093A0ED26D8E2E50069514D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -560,7 +571,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B093A0E726D8E2E40069514D /* Build configuration list for PBXProject "GithubLookupCorrectedImage" */ = {
+		B093A0E726D8E2E40069514D /* Build configuration list for PBXProject "GitProbe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B093A11426D8E2E80069514D /* Debug */,
@@ -597,6 +608,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4EB61F92773946200735AA1 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4EB61FA2773946200735AA1 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4EB61F92773946200735AA1 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		E4EB61FC2773946200735AA1 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4EB61F92773946200735AA1 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B093A0E426D8E2E40069514D /* Project object */;
 }

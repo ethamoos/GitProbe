@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 // MARK: - User
 struct User: Codable, Hashable {
@@ -81,7 +82,9 @@ struct ContentView: View {
             Form {
                 Section {
                     Text("Enter user to search for")
-                    TextField("Enter your username", text: $username)
+                    TextField("Enter your username", text: $username).disableAutocorrection(true)
+                        .autocapitalization(.none)
+
                 }
                 NavigationLink(destination: DetailView(username: $username)) {
                     Text("Show detail for \(username)")
@@ -113,11 +116,18 @@ struct UserDetailView: View {
     var user: User
     
     var body: some View {
+//        Link(destination: URL(string: user.html_url)!){
         Form {
             Text(user.login).font(.headline)
             Text("Score = \(user.score)")
             Text("ID = \(user.id)")
             Text("URL = \(user.url)")
+            Text("htmlURL = \(user.htmlURL)")
+            Text("reposURL = \(user.reposURL)")
+//            Text("Avatar URL = \(user.avatarURL)")
+            URLImage(URL(string:user.avatarURL)!){ image in
+                image.resizable().frame(width: 50, height: 50)
+            }
         }
     }
 }
