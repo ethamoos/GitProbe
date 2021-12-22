@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B2AF56BF-E076-495C-A816-5311393A7556"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBE1FA69-FC51-4935-A8A4-2D08574907B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GithubLookupCorrected/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "BBE1FA69-FC51-4935-A8A4-2D08574907B8 - 5667129ca5659c06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubLookupCorrected.Result.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;GithubLookupCorrected.Result.CodingKeys&gt;"
+                  moduleName = "GithubLookupCorrected"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amosdeane/GitHub/ethamoos/GIthubLookupCorrectedImage/GithubLookupCorrected/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "BBE1FA69-FC51-4935-A8A4-2D08574907B8 - 821c2540124f558c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubLookupCorrected.Result.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "GithubLookupCorrected"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amosdeane/GitHub/ethamoos/GIthubLookupCorrectedImage/GithubLookupCorrected/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
