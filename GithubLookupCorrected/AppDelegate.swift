@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  GIthubLookupCorrected
-//
-//  Created by Amos Deane on 27/08/2021.
-//
 
 import UIKit
 
