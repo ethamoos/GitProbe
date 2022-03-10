@@ -1,6 +1,6 @@
 # GitProbe
 
-This is an extension of an exercise is Greg Lim's book 
+This is an extension of an exercise in Greg Lim's book 
 Beginning Swift UI
 https://www.amazon.com/Beginning-SwiftUI-Greg-Lim-ebook/dp/B08XV4NPDP
 
