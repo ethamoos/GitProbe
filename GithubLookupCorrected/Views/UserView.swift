@@ -13,16 +13,24 @@ struct UserView: View {
     
     @State var username: String
     @ObservedObject var fetchUsers = FetchUsers()
+    @State private var searchText = ""
+    
     
     var body: some View {
+        
+        ScrollView {
+            Text("")
+        }
+        
         List {
             ForEach(fetchUsers.users, id:\.self) { user in
                 NavigationLink(user.login, destination: UserDetailView(user:user))
             }
+            .searchable(text: $searchText)
+            
         }.onAppear {
             self.fetchUsers.search(for: username)
         }
-        
     }
 }
 

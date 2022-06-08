@@ -21,7 +21,6 @@ struct ContentView: View {
                     Text("Enter user to search for")
                     TextField("Enter your username", text: $username).disableAutocorrection(true)
                         .autocapitalization(.none)
-
                 }
                 NavigationLink(destination: UserView(username: username)) {
                     Text("Show detail for \(username)")
