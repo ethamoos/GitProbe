@@ -1,48 +1,31 @@
-//
-//  ContentView.swift
-//  GIthubLookupCorrected
-//
-//  Created by Amos Deane on 27/08/2021.
-//
-
 import SwiftUI
 import URLImage
 
-// MARK: - User
+
+struct Result: Codable {
+    let totalCount: Int
+    let incompleteResults: Bool
+    let items: [User]
+    
+    enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case incompleteResults = "incomplete_results"
+        case items
+    }
+}
+
 struct User: Codable, Hashable {
     let login: String
     let id: Int
     let nodeID: String
     let avatarURL: String
     let gravatarID: String
-    let url, htmlURL, followersURL: String
-    let followingURL, gistsURL, starredURL: String
-    let subscriptionsURL, organizationsURL, reposURL: String
-    let eventsURL: String
-    let receivedEventsURL: String
-    let type: String
-    let siteAdmin: Bool
-    let score: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case login, id
         case nodeID = "node_id"
         case avatarURL = "avatar_url"
         case gravatarID = "gravatar_id"
-        case url
-        case htmlURL = "html_url"
-        case followersURL = "followers_url"
-        case followingURL = "following_url"
-        case gistsURL = "gists_url"
-        case starredURL = "starred_url"
-        case subscriptionsURL = "subscriptions_url"
-        case organizationsURL = "organizations_url"
-        case reposURL = "repos_url"
-        case eventsURL = "events_url"
-        case receivedEventsURL = "received_events_url"
-        case type
-        case siteAdmin = "site_admin"
-        case score
     }
 }
 
@@ -78,15 +61,14 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-             
+            
             Form {
                 Section {
                     Text("Enter user to search for")
                     TextField("Enter your username", text: $username).disableAutocorrection(true)
                         .autocapitalization(.none)
-
                 }
-                NavigationLink(destination: DetailView(username: $username)) {
+                NavigationLink(destination: UserView(username: username)) {
                     Text("Show detail for \(username)")
                 }
             }
@@ -94,10 +76,11 @@ struct ContentView: View {
     }
 }
 
-struct DetailView: View {
+struct UserView: View {
     
-    @Binding var username: String
+    @State var username: String
     @ObservedObject var fetchUsers = FetchUsers()
+    @State var searchText = ""
     
     var body: some View {
         List {
@@ -107,8 +90,19 @@ struct DetailView: View {
         }.onAppear {
             self.fetchUsers.search(for: username)
         }
+        .searchable(text: $searchText)
+        .navigationTitle("Users")
         
     }
+    
+    /// The search results
+//    private var searchResults: [User] {
+//        if searchText.isEmpty {
+//            return fetchUsers.users // your entire list of users if no search input
+//        } else {
+//            return fetchUsers.search(for: searchText) // calls your search method passing your search text
+//        }
+//    }
 }
 
 struct UserDetailView: View {
@@ -116,15 +110,9 @@ struct UserDetailView: View {
     var user: User
     
     var body: some View {
-//        Link(destination: URL(string: user.html_url)!){
         Form {
             Text(user.login).font(.headline)
-//            Text("Score = \(user.score)")
             Text("Git iD = \(user.id)")
-//            Text("URL = \(user.url)")
-            Text("Web Url = \(user.htmlURL)")
-            Text("Repos Url = \(user.reposURL)")
-//            Text("Avatar URL = \(user.avatarURL)")
             URLImage(URL(string:user.avatarURL)!){ image in
                 image.resizable().frame(width: 50, height: 50)
             }
@@ -132,16 +120,4 @@ struct UserDetailView: View {
     }
 }
 
-
-struct Result: Codable {
-    let totalCount: Int
-    let incompleteResults: Bool
-    let items: [User]
-
-    enum CodingKeys: String, CodingKey {
-        case totalCount = "total_count"
-        case incompleteResults = "incomplete_results"
-        case items
-    }
-}
 
