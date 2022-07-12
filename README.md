@@ -8,9 +8,9 @@ The original exercise allowed you to pull some data for specific users that had 
 
 I have added the following elements:
 
-An option for the user to search for a specific user.
+    An option for the user to search for a specific user.
 
-The information reported includes a few additional attributes.
+    The information reported includes a few additional attributes.
 
-A search filter is now included to narrow an initial wide search.
+    A search filter is now included to narrow an initial wide search.
 
